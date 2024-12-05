@@ -7,7 +7,7 @@ import sys
 print('\033[32m') 
 
 def locate():
-    data = requests.get("http://ip-api.com/json/" + ip + "?fields=status,message,continent,country,region,regionName,city,district,zip,lat,lon,timezone,currency,isp,org,as,asname,reverse,mobile,proxy")
+    data = requests.get("http://ip-api.com/json/" + ip + "?fields=status,message,continent,country,region,regionName,city,district,zip,lat,lon,timezone,currency,isp,org,as,asname,reverse,mobile,proxy", timeout=60)
     resp = data.json()
     print("\nIP address successfully zoomed !\n")
     print("Status: " + resp["status"])
